@@ -58,8 +58,25 @@ ggplot(weather_df,aes(x = tmin, y = tmax, color=name)) +
   geom_smooth(se = FALSE)
 ```
 
+Facetting 
 
+```{r}
 
+ggplot(weather_df,aes(x = tmin, y = tmax)) +
+   geom_point(alpha=0.2)+
+  geom_smooth(se = FALSE)+
+  facet_grid(~name)
+```
+
+date~tmax
+
+```{r}
+ggplot(weather_df,aes(x = date, y = tmax,color = name,size = prcp))+
+  #geom_line()
+  geom_point()+
+  geom_smooth(se=FALSE)+
+  facet_grid(~name)
+```
 
 
 
